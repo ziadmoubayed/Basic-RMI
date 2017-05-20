@@ -38,5 +38,9 @@ public class RMIUtils {
 	Naming.bind(path, toBindObj);
 	logger.info("RMI - bound in registry: " + path);
     }
-
+	
+    public static void setServeHostnameConfiguration(String host)
+    {
+	System.setProperty("java.rmi.server.hostname", host);
+    }
 }

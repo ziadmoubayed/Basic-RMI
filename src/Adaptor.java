@@ -19,6 +19,7 @@ public class Adaptor extends UnicastRemoteObject implements RmiMethods {
 	
 	public void bind(String host, int port){
 		try {
+			RMIUtils.setServeHostnameConfiguration(host);
 			RMIUtils.bindObject(host, port, "Adaptor", this);
 		} catch (RemoteException | MalformedURLException | AlreadyBoundException e) {
 			// TODO Auto-generated catch block
