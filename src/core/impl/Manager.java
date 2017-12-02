@@ -44,13 +44,13 @@ public class Manager implements Runnable
 		logger.info("Connected!");;
 	    } catch (Exception e)
 	    {
-		e.printStackTrace();
+		logger.warning("Failed to connect to Adaptor. " + e.getMessage());
 	    }
 	    if(null == this.adaptor)
 	    {
 		try
 		{
-		    Thread.sleep(2000);
+		    Thread.sleep(4000);
 		} catch (InterruptedException e)
 		{
 		    // TODO Auto-generated catch block
